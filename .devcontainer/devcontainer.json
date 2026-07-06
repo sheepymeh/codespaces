@@ -1,0 +1,16 @@
+{
+  "name": "Debian Codespace",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "init": true,
+  "forwardPorts": [6080],
+  "portsAttributes": {
+    "6080": {
+      "label": "Sway noVNC",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "postStartCommand": "nohup dbus-run-session -- bash .devcontainer/start-gui.sh >/tmp/gui-bootstrap.log 2>&1 &"
+}
