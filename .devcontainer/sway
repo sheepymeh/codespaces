@@ -1,5 +1,5 @@
 #!/bin/sh
-set -eu
+set -e
 
 export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/tmp/xdg-runtime}"
 export WLR_BACKENDS="${WLR_BACKENDS:-headless}"
@@ -11,6 +11,7 @@ install -d -m 700 -o 1000 -g 1000 "$XDG_RUNTIME_DIR"
 dbus-daemon --session --nofork --address="unix:path=$XDG_RUNTIME_DIR/bus" &
 
 /usr/bin/sway "$@" &
+sway_pid=$!
 
 wayvnc 127.0.0.1 5901 &
 
