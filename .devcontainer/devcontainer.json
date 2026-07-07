@@ -11,6 +11,5 @@
       "label": "Sway noVNC",
       "onAutoForward": "openBrowser"
     }
-  },
-  "postStartCommand": "nohup dbus-run-session -- bash .devcontainer/start-gui.sh >/tmp/gui-bootstrap.log 2>&1 &"
+  }
 }
