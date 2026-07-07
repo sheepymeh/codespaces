@@ -1,5 +1,6 @@
 {
   "name": "Debian Codespace",
+  "overrideCommand": false,
   "build": {
     "dockerfile": "Dockerfile",
     "context": ".."
@@ -8,7 +9,7 @@
   "forwardPorts": [6080],
   "portsAttributes": {
     "6080": {
-      "label": "Sway noVNC",
+      "label": "Sway",
       "onAutoForward": "openBrowser"
     }
   }
